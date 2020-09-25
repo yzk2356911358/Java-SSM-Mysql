@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzk.nfcp.dao.EvaluationDao">
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+	<select id="queryById" resultType="Evaluation" parameterType="int">
+		<!-- 具体的sql -->
+		SELECT
+		*
+		FROM
+		Evaluation
+		WHERE
+		id = #{id}
+	</select>
+	<select id="queryAll" resultType="Evaluation">
+		SELECT
+		*
+		FROM
+		Evaluation
+	</select>
+	<!-- id="save"是唯一的标示符 parameterType属性指明插入时使用的参数类型 useGeneratedKeys="true"表示使用数据库的自动增长策略 -->
+	<insert id="add" parameterType="com.yzk.nfcp.model.Evaluation"
+		useGeneratedKeys="true">
+		INSERT INTO Evaluation (username,date,lr,hf,gid)
+		VALUES(#{username},#{date},#{lr},#{hf},#{gid})
+	</insert>
+	<!-- delete操作 parameterType="int"表示该查询语句需要一个int类型的参数 -->
+	<delete id="del" parameterType="int">
+		DELETE FROM Evaluation WHERE
+		id = #{id}
+	</delete>
+	<update id="up" parameterType="com.yzk.nfcp.model.Evaluation">
+		UPDATE Evaluation
+		SET
+		username =
+		#{username},date =
+		#{date},lr = #{lr},hf
+		= #{hf},gid
+		= #{gid}
+		WHERE id =
+		#{id}
+	</update>
+</mapper>

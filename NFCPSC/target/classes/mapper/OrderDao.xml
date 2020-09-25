@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzk.nfcp.dao.OrderDao">
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+	<select id="queryById" resultType="Orders" parameterType="int">
+		<!-- 具体的sql -->
+		SELECT
+		*
+		FROM
+		Orders
+		WHERE
+		id = #{id}
+	</select>
+	<select id="queryAll" resultType="Orders">
+		SELECT
+		*
+		FROM
+		Orders
+	</select>
+	<!-- id="save"是唯一的标示符 parameterType属性指明插入时使用的参数类型 useGeneratedKeys="true"表示使用数据库的自动增长策略 -->
+	<insert id="add" parameterType="com.yzk.nfcp.model.Orders"
+		useGeneratedKeys="true">
+		INSERT INTO orders (name,dj,sl,img,sjr,addred)
+		VALUES(#{name},#{dj},#{sl},#{img},#{sjr},#{addred})
+	</insert>
+	<!-- delete操作 parameterType="int"表示该查询语句需要一个int类型的参数 -->
+	<delete id="del" parameterType="int">
+		DELETE FROM Orders WHERE
+		id = #{id}
+	</delete>
+	<update id="up" parameterType="com.yzk.nfcp.model.Orders">
+		UPDATE Orders
+		SET
+		name =
+		#{name},dj =
+		#{dj},kc = #{kc},sl
+		= #{sl},img
+		= #{img},sjr
+		= #{sjr},addred
+		= #{addred}
+		WHERE id =
+		#{id}
+	</update>
+</mapper>

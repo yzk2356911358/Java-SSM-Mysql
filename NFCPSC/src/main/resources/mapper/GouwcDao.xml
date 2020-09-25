@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzk.nfcp.dao.GwcDao">
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+	<select id="queryById" resultType="Gouwc" parameterType="int">
+		<!-- 具体的sql -->
+		SELECT
+		*
+		FROM
+		Gouwc
+		WHERE
+		id = #{id}
+	</select>
+	<select id="queryAll" resultType="Gouwc">
+		SELECT
+		*
+		FROM
+		Gouwc
+	</select>
+
+	<!-- delete操作 parameterType="int"表示该查询语句需要一个int类型的参数 -->
+	<delete id="del" parameterType="int">
+		DELETE FROM Gouwc WHERE
+		id = #{id}
+	</delete>
+	<!-- id="save"是唯一的标示符 parameterType属性指明插入时使用的参数类型 useGeneratedKeys="true"表示使用数据库的自动增长策略 -->
+	<insert id="add" parameterType="com.yzk.nfcp.model.Gouwc"
+		useGeneratedKeys="true">
+		INSERT INTO Gouwc(uid,gname,dj,sl)
+		VALUES(#{uid},#{gname},#{dj},#{sl})
+	</insert>
+	<!-- update操作 parameterType="user"表示该更新语句需要一个user对象作为参数 -->
+	<update id="up" parameterType="com.yzk.nfcp.model.Gouwc">
+		UPDATE Gouwc
+		SET uid =
+		#{uid},gname = #{gname},dj = #{dj},sl
+		= #{sl}
+		WHERE id = #{id}
+	</update>
+</mapper>

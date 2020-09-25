@@ -1,0 +1,132 @@
+.layui-tank .layui-card{
+	padding: 20px 60px 50px 10px;	
+	overflow-y: auto;
+}
+/*定义滑块 内阴影+圆角*/
+.layui-tank .layui-card::-webkit-scrollbar-thumb
+{
+    border-radius: 3px;    
+    background-color: #ccc;
+}
+.tkbtnfxd{
+	background: #e8e8e8;
+    border-top: 1px #ddd solid;
+    position: fixed;
+    bottom: 0;
+    width: 96%;
+    text-align: right;
+    padding: 2%;
+    z-index: 100;
+}
+.tkbtnfxd .layui-btn+.layui-btn{
+	margin-right: 10px;
+}
+/*-----------------弹框样式---------------------*/
+.float-left{ float: left;}
+.float-right{ float: right;}
+.col-red{ color: #ef5350!important; }
+.col-blue{ color: #1E9FFF!important;}
+.col-green{ color: #0ab3ab!important;}
+.col-hui{ color: #666!important;}
+/*----------------发布职位----------------*/
+.linarrow{
+	line-height: 50px;	
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+.linarrow .linitem{text-align: center; height: 50px; margin-bottom: 10px;}
+.linarrow .linitem .grid-demo{
+	background: #fff;
+	border-radius: 6px;
+}
+.linarrow .linitem .grid-demo.active{
+	color: #fff;
+	background-color: #177ce3;
+    background-repeat: repeat-y;
+    background-image: -moz-linear-gradient(left,#29adeb,#177ce3);
+    background-image: -webkit-linear-gradient(left,#29adeb,#177ce3);
+    background-image: -o-linear-gradient(left,#29adeb,#177ce3);
+    background-image: linear-gradient(left,#29adeb,#177ce3);
+}
+.positionbox{
+	padding: 20px;
+}
+.fuldy{
+	padding-left: 110px;
+}
+
+/*--------------------简历管理------------------------*/
+.sortbox{
+	padding: 15px 20px;
+}
+.sortbox a{
+	padding: 0 6px;
+}
+.sortbox a.active,.sortbox a.active i{
+	color: #1E9FFF!important;
+	font-weight: bold;
+}
+.tabposid{
+	position: absolute;
+	right: 0;	
+}
+.spbox{
+	padding: 20px;
+}
+.spbox .spimg{
+	text-align: center;
+	background: #f5f5f5;
+}
+.spbox .sptxt{
+	padding: 10px 0;
+}
+.spbox .sptxt h3{
+	line-height: 20px;
+	height: 40px;
+	text-overflow: -o-ellipsis-lastline;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	line-clamp: 2;
+	-webkit-box-orient: vertical;  
+}
+.spbox .sptxt p{
+	color: #666;
+	line-height: 22px;
+}
+.spbox .sptxt p i{ font-size: 22px; float: left;}
+/*-------------筛选设置---------------*/
+.seachadd{ padding: 10px 0; margin-top: 15px;}
+.seachadd p{ line-height: 38px;}
+.addbox{ padding: 15px 0;}
+.addbox a:hover i{ color: #1E9FFF; }
+
+/*表格自适应*/
+.table-responsive{ overflow-x: auto;}
+@media screen and (max-width: 767px){
+	.layui-table td,.layui-table th,.layui-table-fixed-r,.layui-table-header,.layui-table-page,.layui-table-tips-main,.layui-table-tool,.layui-table-view,.layui-table[lay-skin=line],.layui-table[lay-skin=row] {
+		 white-space: nowrap;	 
+	}
+	.table-responsive {
+		overflow-x: auto;
+	    width: 100%;
+	    margin-bottom: 15px;
+	    overflow-y: hidden;
+	    -ms-overflow-style: -ms-autohiding-scrollbar;
+	    border: 1px solid #ddd;
+	}
+}
+@media (max-width: 1336px){
+	.layui-table td,.layui-table th,.layui-table-fixed-r,.layui-table-header,.layui-table-page,.layui-table-tips-main,.layui-table-tool,.layui-table-view,.layui-table[lay-skin=line],.layui-table[lay-skin=row] {
+		 white-space: nowrap;	 
+	}
+	.table-responsive {
+		overflow-x: auto;
+	    width: 100%;
+	    margin-bottom: 15px;
+	    overflow-y: hidden;
+	    -ms-overflow-style: -ms-autohiding-scrollbar;
+	    border: 1px solid #ddd;
+	}
+}
